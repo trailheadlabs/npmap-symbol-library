@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+
+<svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="-6-6 42 42" enable-background="new 0 0 42 42" xml:space="preserve">
 <rect x="-6" y="-6" rx="6" ry="6" width="42" height="42" style="fill:black;stroke:white;stroke-width:3;opacity:1.0" />
-<g opacity="0.5"><g opacity="0.5">
+<g opacity="0.5">
 	<path d="M25,30L15,10L5,30H2v2h26v-2H25z M9,30l6-11.3L21,30H9z"/>
 </g>
 <polygon opacity="0.5" points="19,5.9 17.5,8.9 27,28 30,28 "/>

@@ -1,0 +1,7 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+  <title>a</title>
+  <path d="M5,2H4L3,3.05v2H4v-1H5v1H6V3Z" style="fill: #fff"/>
+  <path d="M9,2H8L7,3V5H8V4H9V5h1V3Z" style="fill: #fff"/>
+  <path d="M2,5L3,7A3.53,3.53,0,0,1,4.5,6C5,6,5.9,7,6.5,7s1.42-1,2-1A3.29,3.29,0,0,1,10,7l1-2H2Z" style="fill: #fff"/>
+  <path d="M6.5,8c0.58,0,1.42-1,2-1a3.4,3.4,0,0,1,1.5.8V9A3.4,3.4,0,0,0,8.5,8c-0.56,0-1.4,1-2,1S5,8,4.5,8A3.53,3.53,0,0,0,3,9.05V7.85A3.24,3.24,0,0,1,4.5,7C5.1,7,5.92,8,6.5,8Z" style="fill: #fff"/>
+</svg>

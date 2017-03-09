@@ -16,6 +16,10 @@ The Symbol Library uses a semantic versioning scheme:
 * 0.y.0: Icons added
 * x.0.0: Icons removed, sprite scheme changed, or major features added
 
+## Changelog
+
+- [2.2.3](https://github.com/trailheadlabs/symbol-library/releases/tag/2.2.3): First Trailhead Labs release
+
 ## File Structure
 
 This repository was originally forked from Mapbox's [Maki](https://github.com/mapbox/maki) project, so the file structure is similar.

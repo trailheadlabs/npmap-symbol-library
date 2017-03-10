@@ -4,9 +4,9 @@ set -e -u
 # Usage: ./render.sh [png|sprite|css]
 
 # Config
-pngdirbuilder=`pwd`"/renders/npmap-builder"  # PNGs will be created, possibly overwritten, here
+pngdirbuilder=`pwd`"/renders/outerspatial-builder"  # PNGs will be created, possibly overwritten, here
 pngdirstandalone=`pwd`"/renders/standalone"  # PNGs will be created, possibly overwritten, here
-svgdirbuilder=`pwd`"/src/npmap-builder"  # SVGs should already be here
+svgdirbuilder=`pwd`"/src/outerspatial-builder"  # SVGs should already be here
 svgdirstandalone=`pwd`"/src/standalone"  # SVGs should already be here
 tilex=15  # how many icons wide the sprites will be
 
@@ -81,13 +81,13 @@ function build_css_builder {
     dy=0
     maxwidth=$((54*$tilex/3-1))
 
-    cat www/npmap-symbol-library-sprite.css.tpl > www/npmap-builder/npmap-symbol-library-sprite.css
+    cat www/outerspatial-symbol-library-sprite.css.tpl > www/outerspatial-builder/outerspatial-symbol-library-sprite.css
 
     for icon in $@; do
         count=$(($count + 1))
 
-        echo ".npmap-symbol-library-icon.$icon { background-position: ${dx}px ${dy}px; }" \
-            >> www/npmap-builder/npmap-symbol-library-sprite.css
+        echo ".outerspatial-symbol-library-icon.$icon { background-position: ${dx}px ${dy}px; }" \
+            >> www/outerspatial-builder/outerspatial-symbol-library-sprite.css
 
         # Check if we need to add a new row yet,
         # and if so, adjust dy and dy accordingly.
@@ -101,9 +101,9 @@ function build_css_builder {
     done
 
     # Update sprite dimensions for retina rules.
-    dim="$(identify -format "%wpx %hpx" www/npmap-builder/images/npmap-symbol-library-sprite.png)"
-    cat www/npmap-builder/npmap-symbol-library-sprite.css | sed "s/background-size: [0-9]*px [0-9]*px;/background-size: $dim;/" > www/npmap-builder/npmap-symbol-library-sprite.css.tmp
-    mv www/npmap-builder/npmap-symbol-library-sprite.css.tmp www/npmap-builder/npmap-symbol-library-sprite.css
+    dim="$(identify -format "%wpx %hpx" www/outerspatial-builder/images/outerspatial-symbol-library-sprite.png)"
+    cat www/outerspatial-builder/outerspatial-symbol-library-sprite.css | sed "s/background-size: [0-9]*px [0-9]*px;/background-size: $dim;/" > www/outerspatial-builder/outerspatial-symbol-library-sprite.css.tmp
+    mv www/outerspatial-builder/outerspatial-symbol-library-sprite.css.tmp www/outerspatial-builder/outerspatial-symbol-library-sprite.css
 }
 
 function build_css_standalone {
@@ -112,13 +112,13 @@ function build_css_standalone {
     dy=0
     maxwidth=$((54*$tilex/3-1))
 
-    cat www/npmap-symbol-library-sprite.css.tpl > www/standalone/npmap-symbol-library-sprite.css
+    cat www/outerspatial-symbol-library-sprite.css.tpl > www/standalone/outerspatial-symbol-library-sprite.css
 
     for icon in $@; do
         count=$(($count + 1))
 
-        echo ".npmap-symbol-library-icon.$icon { background-position: ${dx}px ${dy}px; }" \
-            >> www/standalone/npmap-symbol-library-sprite.css
+        echo ".outerspatial-symbol-library-icon.$icon { background-position: ${dx}px ${dy}px; }" \
+            >> www/standalone/outerspatial-symbol-library-sprite.css
 
         # Check if we need to add a new row yet,
         # and if so, adjust dy and dy accordingly.
@@ -132,9 +132,9 @@ function build_css_standalone {
     done
 
     # Update sprite dimensions for retina rules.
-    dim="$(identify -format "%wpx %hpx" www/standalone/images/npmap-symbol-library-sprite.png)"
-    cat www/standalone/npmap-symbol-library-sprite.css | sed "s/background-size: [0-9]*px [0-9]*px;/background-size: $dim;/" > www/standalone/npmap-symbol-library-sprite.css.tmp
-    mv www/standalone/npmap-symbol-library-sprite.css.tmp www/standalone/npmap-symbol-library-sprite.css
+    dim="$(identify -format "%wpx %hpx" www/standalone/images/outerspatial-symbol-library-sprite.png)"
+    cat www/standalone/outerspatial-symbol-library-sprite.css | sed "s/background-size: [0-9]*px [0-9]*px;/background-size: $dim;/" > www/standalone/outerspatial-symbol-library-sprite.css.tmp
+    mv www/standalone/outerspatial-symbol-library-sprite.css.tmp www/standalone/outerspatial-symbol-library-sprite.css
 }
 
 function build_positions_builder {
@@ -145,7 +145,7 @@ function build_positions_builder {
     dy=0
     maxwidth=$((54*$tilex/3-1))
 
-    file="www/npmap-builder/npmap-symbol-library-sprite.json"
+    file="www/outerspatial-builder/outerspatial-symbol-library-sprite.json"
 
     echo "{" > $file;
 
@@ -181,7 +181,7 @@ function build_positions_standalone {
     dy=0
     maxwidth=$((72*$tilex/3-1))
 
-    file="www/standalone/npmap-symbol-library-sprite.json"
+    file="www/standalone/outerspatial-symbol-library-sprite.json"
 
     echo "{" > $file;
 
@@ -211,14 +211,14 @@ function build_positions_standalone {
     echo "}" >> $file
 }
 
-# Get a lcst of all the icon names - any icons not in npmap-symbol-library.json
+# Get a lcst of all the icon names - any icons not in outerspatial-symbol-library.json
 # will not be rendered or included in the sprites.
-iconsbuilder=$(grep '"icon":' www/npmap-builder/npmap-symbol-library.json \
+iconsbuilder=$(grep '"icon":' www/outerspatial-builder/outerspatial-symbol-library.json \
     | sed 's/.*\:\ "\([-a-z0-9]*\)".*/\1/' \
     | tr '\n' ' ')
-iconsstandalone=$(grep '"icon":' www/standalone/npmap-symbol-library.json \
+iconsstandalone=$(grep '"icon":' www/standalone/outerspatial-symbol-library.json \
     | sed 's/.*\:\ "\([-a-z0-9]*\)".*/\1/' \
-    | tr '\n' ' ')
+    | tr '\n' ' ')build
 
 # Build lists of all the SVG and PNG files from the icons list
 svgsbuilder=$(for icon in $iconsbuilder; do echo -n $svgdirbuilder/${icon}-{24,18,12}.svg" "; done)
@@ -230,14 +230,14 @@ pngs2xstandalone=$(for icon in $iconsstandalone; do echo -n $pngdirstandalone/${
 
 case $@ in
     png | pngs )
-        build_pngs $svgsbuilder
-        build_pngs $svgsstandalone
+        build_pngs_builder $svgsbuilder
+        build_pngs_standalone $svgsstandalone
         ;;
     sprite | sprites )
-        build_sprite "www/npmap-builder/images/npmap-symbol-library-sprite.png" $pngsbuilder
-        build_sprite "www/npmap-builder/images/npmap-symbol-library-sprite@2x.png" $pngs2xbuilder
-        build_sprite "www/standalone/images/npmap-symbol-library-sprite.png" $pngsstandalone
-        build_sprite "www/standalone/images/npmap-symbol-library-sprite@2x.png" $pngs2xstandalone
+        build_sprite "www/outerspatial-builder/images/outerspatial-symbol-library-sprite.png" $pngsbuilder
+        build_sprite "www/outerspatial-builder/images/outerspatial-symbol-library-sprite@2x.png" $pngs2xbuilder
+        build_sprite "www/standalone/images/outerspatial-symbol-library-sprite.png" $pngsstandalone
+        build_sprite "www/standalone/images/outerspatial-symbol-library-sprite@2x.png" $pngs2xstandalone
         ;;
     css )
         build_css_builder $iconsbuilder
@@ -249,19 +249,19 @@ case $@ in
         ;;
     debug )
         # Prints out all of the icon and file lists for debugging
-        echo -e "\nIcons (NPMap Builder):"
+        echo -e "\nIcons (OuterSpatial Builder):"
         echo $iconsbuilder
         echo -e "\nIcons (Standalone):"
         echo $iconsstandalone
-        echo -e "\nSVGs (NPMap Builder):"
+        echo -e "\nSVGs (OuterSpatial Builder):"
         echo $svgsbuilder
         echo -e "\nSVGs (Standalone):"
         echo $svgsstandalone
-        echo -e "\nPNGs (NPMap Builder):"
+        echo -e "\nPNGs (OuterSpatial Builder):"
         echo $pngsbuilder
         echo -e "\nPNGs (Standalone):"
         echo $pngsstandalone
-        echo -e "\nPNGs @2x (NPMap Builder):"
+        echo -e "\nPNGs @2x (OuterSpatial Builder):"
         echo $pngs2xbuilder
         echo -e "\nPNGs @2x (Standalone):"
         echo $pngs2xstandalone
@@ -269,13 +269,13 @@ case $@ in
     * )
         # By default we build the PNGs, sprites, CSS, and position JSON
         build_pngs_builder $svgsbuilder
-        build_sprite "www/npmap-builder/images/npmap-symbol-library-sprite.png" $pngsbuilder
-        build_sprite "www/npmap-builder/images/npmap-symbol-library-sprite@2x.png" $pngs2xbuilder
+        build_sprite "www/outerspatial-builder/images/outerspatial-symbol-library-sprite.png" $pngsbuilder
+        build_sprite "www/outerspatial-builder/images/outerspatial-symbol-library-sprite@2x.png" $pngs2xbuilder
         build_css_builder $iconsbuilder
         build_positions_builder $iconsbuilder
         build_pngs_standalone $svgsstandalone
-        build_sprite "www/standalone/images/npmap-symbol-library-sprite.png" $pngsstandalone
-        build_sprite "www/standalone/images/npmap-symbol-library-sprite@2x.png" $pngs2xstandalone
+        build_sprite "www/standalone/images/outerspatial-symbol-library-sprite.png" $pngsstandalone
+        build_sprite "www/standalone/images/outerspatial-symbol-library-sprite@2x.png" $pngs2xstandalone
         build_css_standalone $iconsstandalone
         build_positions_standalone $iconsstandalone
         ;;

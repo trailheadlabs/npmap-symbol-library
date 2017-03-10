@@ -1,5 +1,5 @@
-.npmap-symbol-library-icon {
-  background-image: url(images/npmap-symbol-library-sprite.png);
+.outerspatial-symbol-library-icon {
+  background-image: url(images/outerspatial-symbol-library-sprite.png);
   background-position: 24px 24px;
   background-repeat: no-repeat;
   height: 24px;
@@ -7,7 +7,7 @@
   text-indent: -9999px;
   width: 24px;
 }
-.title-box .npmap-symbol-library-icon.full {
+.title-box .outerspatial-symbol-library-icon.full {
   display: block;
   left: 0;
   margin: auto;
@@ -15,10 +15,10 @@
   width: 54px;
 }
 @media
-  only screen and (-webkit-min-device-pixel-ratio : 2),
-  only screen and (min-device-pixel-ratio : 2) {
-    .npmaki-icon {
-      background-image:url(images/npmap-symbol-library-sprite@2x.png);
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-pixel-ratio: 2) {
+    .maki-icon {
+      background-image: url(images/outerspatial-symbol-library-sprite@2x.png);
       background-size: 000px 000px; /* Replaced automatically by render.sh */
     }
   }

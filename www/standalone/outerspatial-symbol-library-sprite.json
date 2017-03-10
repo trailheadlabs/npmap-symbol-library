@@ -808,4 +808,7 @@
 "zebra-mussel-decontamination-station-white-16": { "x": 272, "y": 1696, "width": 16, "height": 16 },
 "zebra-mussel-decontamination-station-slate-32": { "x": 288, "y": 1696, "width": 32, "height": 32 },
 "zebra-mussel-decontamination-station-slate-24": { "x": 320, "y": 1696, "width": 24, "height": 24 },
-"zebra-mussel-decontamination-station-slate-16": { "x": 344, "y": 1696, "width": 16, "height": 16 }}
+"zebra-mussel-decontamination-station-slate-16": { "x": 344, "y": 1696, "width": 16, "height": 16 },
+"build-32": { "x": 0, "y": 1728, "width": 32, "height": 32 },
+"build-24": { "x": 32, "y": 1728, "width": 24, "height": 24 },
+"build-16": { "x": 56, "y": 1728, "width": 16, "height": 16 }}

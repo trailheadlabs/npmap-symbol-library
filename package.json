@@ -1,14 +1,14 @@
 {
   "author": "Trailhead Labs",
-  "name": "symbol-library",
-  "description": "Extending the Maki icon set to include outdoor recreation symbols from the National Park Service",
-  "version": "2.2.3",
-  "homepage": "https://github.com/trailheadlabs/symbol-library/",
+  "name": "outerspatial-symbol-library",
+  "description": "Extending the Maki icon set to include parks and recreation symbols",
+  "version": "3.0.0",
+  "homepage": "https://github.com/trailheadlabs/outerspatial-symbol-library/",
   "scripts": {
     "test": "tap test/*.js"
   },
   "main": "index.js",
-  "repository": "https://github.com/trailheadlabs/symbol-library/",
+  "repository": "https://github.com/trailheadlabs/outerspatial-symbol-library/",
   "devDependencies": {
     "tap": "~0.4.9"
   }

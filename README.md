@@ -18,6 +18,7 @@ The OuterSpatial Symbol Library uses semantic versioning, meaning:
 
 - 2.2.3: First Trailhead Labs release
 - [3.0.0](https://github.com/trailheadlabs/outerspatial-symbol-library/milestone/1?closed=1): Renamed OuterSpatial Symbol Library
+- 3.1.0: Fixes a few icon colors and shapes
 
 ## File Structure
 
